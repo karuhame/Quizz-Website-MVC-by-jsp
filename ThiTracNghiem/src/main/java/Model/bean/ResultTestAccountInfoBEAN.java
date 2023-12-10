@@ -71,11 +71,19 @@ public class ResultTestAccountInfoBEAN {
 				System.out.println("ID_Account "  + result.ID_Account);
 				ResultTestAccountInfoBEAN sv = new ResultTestAccountInfoBEAN(result.ID_Test, result.ID_Account);
 				System.out.println("MSSV trong list" + sv.info.MSSV);
-				list.add(sv);	
+				list.add(sv);		
 			}
 		}
-		return list;
-		
+		return list;	
 	}
-
+	public List<ResultTestAccountInfoBEAN> getAllByID_Account(int ID_Account,int ID_Test) {
+		List<ResultTestAccountInfoBEAN> list = getAllByIDTest(ID_Test);
+		List<ResultTestAccountInfoBEAN> result = new ArrayList();
+		for(ResultTestAccountInfoBEAN temp: list) {
+			if(temp.account.ID_Account == ID_Account) {
+				result.add(temp);
+			}
+		}
+		return result;
+	}
 }
