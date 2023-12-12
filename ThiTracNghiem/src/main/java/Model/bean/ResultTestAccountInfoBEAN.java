@@ -18,9 +18,6 @@ public class ResultTestAccountInfoBEAN {
 	public AccountBEAN account;
 	public AccountInfoBEAN info;
 	
-	public int mark;
-	public String testName;
-	public String MSSV;
 	TestDAO testDAO = new TestDAO();
 	AccountInfoDAO accountInfoDAO = new AccountInfoDAO();
 	ResultDAO resultDAO = new ResultDAO();
@@ -40,20 +37,16 @@ public class ResultTestAccountInfoBEAN {
 		
 		List<AccountInfoBEAN> infoList = accountInfoDAO.getAllStudentInfo();
 		for(AccountInfoBEAN infoo: infoList) {
-			System.out.println("ID Account Info: " + infoo.ID_Account);
 			if(infoo.ID_Account == ID_Account) {
 				this.info = infoo;
-				System.out.println("ID Info: " + info.ID_Info);
-				System.out.println("MSSV: " + info.MSSV);
 
 			}
 		}
-		System.out.println("ID Info: " + info.ID_Info);
-		System.out.println("MSSV: " + info.MSSV);
 		List<ResultBEAN> resultList = resultDAO.getAllResult();
 		for(ResultBEAN result: resultList) {
 			if(result.ID_Account == ID_Account && result.ID_Test == ID_Test) {
 				this.result = result;
+				System.out.println(result.Mark);
 			}
 		}
 	
@@ -64,13 +57,9 @@ public class ResultTestAccountInfoBEAN {
 		List<TestBEAN> testList =  new ArrayList();
 		
 		List<ResultBEAN> resultList = resultDAO.getAllResult();
-		System.out.println("ID Test" + ID_Test);
 		for(ResultBEAN result: resultList) {
 			if(result.ID_Test == ID_Test) {
-				System.out.println("Result ID " + result.ID_Result);
-				System.out.println("ID_Account "  + result.ID_Account);
 				ResultTestAccountInfoBEAN sv = new ResultTestAccountInfoBEAN(result.ID_Test, result.ID_Account);
-				System.out.println("MSSV trong list" + sv.info.MSSV);
 				list.add(sv);		
 			}
 		}
@@ -80,7 +69,7 @@ public class ResultTestAccountInfoBEAN {
 		List<ResultTestAccountInfoBEAN> list = getAllByIDTest(ID_Test);
 		List<ResultTestAccountInfoBEAN> result = new ArrayList();
 		for(ResultTestAccountInfoBEAN temp: list) {
-			if(temp.account.ID_Account == ID_Account) {
+			if(temp.info.ID_Account == ID_Account) {
 				result.add(temp);
 			}
 		}

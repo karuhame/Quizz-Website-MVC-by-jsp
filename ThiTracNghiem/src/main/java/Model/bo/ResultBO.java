@@ -19,10 +19,11 @@ public class ResultBO {
 			}
 		}
 		if(check) {
+
 			resultDAO.createResult(ID_Test, ID_Account, Mark);
 		}
 		else {
-			resultDAO.updateResult(ID_Account, Mark);
+			resultDAO.updateResult(ID_Test, ID_Account, Mark);
 		}
 	}
 	public List<ResultBEAN> getAllResult(){

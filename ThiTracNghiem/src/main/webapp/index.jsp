@@ -42,6 +42,12 @@
 </head>
 <body>
   <div class="container">
+  	<%
+	    
+		//if(session.getAttribute("ID_Account") != null){
+			//response.sendRedirect("Menu.jsp");
+		//}
+	%>
     <h2>Login</h2>
 	<form name="form1" action="quizzController?mod=Login" method="post">
       <label for="username">Username:</label>

@@ -37,16 +37,17 @@ public class ResultDAO {
             e.printStackTrace();  // Handle any potential errors
         }
 	}
-	public void updateResult(int ID_Result, int Mark) {
+	public void updateResult(int ID_Test, int ID_Account, int Mark) {
 		try {
-            Connection conn  = new ConnectionJDBC().getConn();
+			Connection conn  = new ConnectionJDBC().getConn();
 			String query = "UPDATE result "
             +"SET Mark = ? " 
-					+"WHERE ID_Result = ?";
+					+"WHERE ID_Account = ? AND ID_Test =?";
 		    PreparedStatement stmt = conn.prepareStatement(query);
 		    
 		    // Gán các giá trị cho các tham số trong câu lệnh truy vấn
-		    stmt.setInt(2, ID_Result);
+		    stmt.setInt(2, ID_Account);
+		    stmt.setInt(3, ID_Test);
 		    stmt.setInt(1, Mark);
 		    		    
 		    // Thực thi câu lệnh truy vấn để cập nhật thông tin vacxin trong cơ sở dữ liệu
@@ -70,7 +71,7 @@ public class ResultDAO {
 	
 			while (resultSet.next()) {
 				int ID_Result = resultSet.getInt("ID_Result");
-				int Mark = resultSet.getInt("ID_Result");
+				int Mark = resultSet.getInt("Mark");
 				int ID_Test = resultSet.getInt("ID_Test");
 				int ID_Account = resultSet.getInt("ID_Account");
 
