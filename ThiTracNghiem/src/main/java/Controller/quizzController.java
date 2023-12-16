@@ -29,8 +29,7 @@ public class quizzController extends HttpServlet {
     TestBO testBO = new TestBO();
 
     public quizzController() {
-        super();
-        
+        super();    
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

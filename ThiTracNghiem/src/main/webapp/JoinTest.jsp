@@ -1,10 +1,10 @@
 <%@page import="Model.bean.*"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Test Page</title>
 <style>
     .question-container {
@@ -59,7 +59,7 @@
 
     <br>
     <p>
-        <a href="index.jsp">Trang chu</a>
+        <a href="index.jsp">Trang chủ</a>
     </p>
 </body>
 </html>

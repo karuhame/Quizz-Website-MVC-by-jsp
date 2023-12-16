@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 
 <style>
-     body {
+    body {
         font-family: Arial, sans-serif;
     }
 
@@ -41,20 +41,17 @@
         padding: 8px 16px;
         text-decoration: none;
         border-radius: 4px;
+        
     }
 
-    .button:hover {
+    a.button:hover {
         background-color: #45a049;
     }
 
     p {
-        text-align: center;
+        text-align: left;
         margin-top: 20px;
-    } 
-    a {
-    	text-decoration: none;
     }
-    
 </style>
 </head>
 <body>

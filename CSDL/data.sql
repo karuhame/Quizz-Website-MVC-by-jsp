@@ -89,7 +89,7 @@ CREATE TABLE `question` (
   PRIMARY KEY (`ID_Question`),
   KEY `ID_Test` (`ID_Test`),
   CONSTRAINT `question_ibfk_1` FOREIGN KEY (`ID_Test`) REFERENCES `test` (`ID_Test`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `question` (
 
 LOCK TABLES `question` WRITE;
 /*!40000 ALTER TABLE `question` DISABLE KEYS */;
-INSERT INTO `question` VALUES (1,'Question 1','Option 1','Option 2','Option 3','Option 4','2',1),(2,'Question 2','Option 1','Option 2','Option 3','Option 4','3',1),(3,'Another Question','Option A','Option B','Option C','Option D','4',2),(4,'Who is the most handsome person?','A','B','C','Duc Son','4',1),(6,'Who is the best?','A','B','C','Son','4',1);
+INSERT INTO `question` VALUES (2,'Question 2','Option 1','Option 2','Option 3','Option 4','3',1),(3,'Another Question','Option A','Option B','Option C','Option D','4',2),(4,'Who is the most handsome person?','A','B','C','Duc Son','4',1),(6,'Who is the best?','A','B','C','Teacher Ha','4',1),(7,'My team\'s mark is?','9','9.5','10','11','3',1);
 /*!40000 ALTER TABLE `question` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `result` (
   KEY `ID_Test` (`ID_Test`),
   CONSTRAINT `result_ibfk_1` FOREIGN KEY (`ID_Account`) REFERENCES `account` (`ID_Account`),
   CONSTRAINT `result_ibfk_2` FOREIGN KEY (`ID_Test`) REFERENCES `test` (`ID_Test`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +128,7 @@ CREATE TABLE `result` (
 
 LOCK TABLES `result` WRITE;
 /*!40000 ALTER TABLE `result` DISABLE KEYS */;
-INSERT INTO `result` VALUES (2,10,1,2),(3,0,2,3),(6,0,2,2);
+INSERT INTO `result` VALUES (2,10,1,2),(3,0,2,3),(6,0,2,2),(7,7,1,3);
 /*!40000 ALTER TABLE `result` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +143,7 @@ CREATE TABLE `test` (
   `ID_Test` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID_Test`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +152,7 @@ CREATE TABLE `test` (
 
 LOCK TABLES `test` WRITE;
 /*!40000 ALTER TABLE `test` DISABLE KEYS */;
-INSERT INTO `test` VALUES (1,'LTM'),(2,'Cong nghe Web'),(3,'CTD');
+INSERT INTO `test` VALUES (1,'LTM'),(2,'Cong nghe Web'),(3,'CTD'),(4,'XLTHS'),(5,'Java');
 /*!40000 ALTER TABLE `test` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -165,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-12  9:32:37
+-- Dump completed on 2023-12-16 16:59:25

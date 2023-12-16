@@ -109,6 +109,4 @@ public class QuestionDAO {
             e.printStackTrace();  // Handle any potential errors
         }
 	}
-	
-
 }
